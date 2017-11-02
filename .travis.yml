@@ -1,0 +1,15 @@
+language: python
+python:
+- 3.5
+install:
+- pip --version
+script:
+- python setup.py build
+deploy:
+  provider: pypi
+  user: cdumay
+  on:
+    tags: true
+    repo: cdumay/cdumay-env2cfgfile
+  password:
+    secure: HRxCMZxXkw7DKii/W4RFiSZEU6DNXfYMx8SMhRsWEk4258a5aD9nwpfEGqarJjUtFc15eW+yAPQneCjJEd7bRBh31dI8DJ5ecFQ6WEpEHPia20V3uMVN60K34og1BNsXkAg/izw2BBV2aMdOtRjCzBOe8cXe8YmsojAv7S5VkucG7wK63AOJfOKz1Pc5pudT0zDXqQmF/T0t8AqjfPrycvASEs4Ri1qrm5Hyoi0vv6C1/KLDOhW5r/elry0s5osCNum6PfGMCo9nOlwmVDBM0t62LJC7nrm7VaAP8QlOGNxJABE/Km0cBfT2QQU0jJQFQlu2lTkb5YXEwt57uqkpvTDLlgbWpky6zrNdXDRWu4TPK32mBLWTa+Nnk3R8lrgBqmvYVBH/z3Dq53pvjh5YlNHQefF4g+Yypmdm+nBKbtlsC9HHbLH2ZEhWLX3+phpjs5Hkw+q31cgt5Kr/vNOKKCxnmXsDlv+dMIaxjl2Cw4H1yaKVxtvsf/A5mhKGBrxSFd0Otb1PwTmTEivZM6DLEU5dYB9UhDEaUvicRtIExC9NrqCkRSi67rtfXEgXfyJO/OwoZkzPMK9QyUR9bV17rIX5Mr2PtnfNyqaENioD7MokYR3XSIIXrkGBtdVbQqezkzc19/WmnPiU73rY586amNBmmJez431Bg5of8JwpKfk=
