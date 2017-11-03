@@ -10,6 +10,7 @@ import argparse
 import json
 import logging
 import os
+import re
 import sys
 import yaml
 
@@ -19,7 +20,7 @@ PARSER = argparse.ArgumentParser(
     description='Dump environment variables into configuration file'
 )
 PARSER.add_argument(
-    '--prefix', help="Environment variable name prefix filter"
+    '--prefix', help="Regular expression to filter variables names"
 )
 PARSER.add_argument(
     '--verbose', action='store_const', const=True, help="Increase verbosity"
@@ -36,7 +37,7 @@ def load_envs(prefix=None):
         logger.debug("Filter is set ({}*)".format(prefix))
     for key, value in os.environ.items():
         if prefix:
-            if key.startswith(prefix):
+            if re.match(prefix, key):
                 result[key] = value
         else:
             result[key] = value

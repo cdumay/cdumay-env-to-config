@@ -26,7 +26,7 @@ Example
 
 The given example dump all environment QT variables in a json file::
 
-    $ ./env2cfg --prefix 'QT_' json /tmp/myenv.json
+    $ ./env2cfg --prefix '^QT_' json /tmp/myenv.json
     $ cat /tmp/myenv.json
     {
         "QT_ACCESSIBILITY": "1",
@@ -34,6 +34,11 @@ The given example dump all environment QT variables in a json file::
         "QT_LINUX_ACCESSIBILITY_ALWAYS_ON": "1",
         "QT_STYLE_OVERRIDE": "gtk"
     }
+
+.. note::
+
+   prefix expression are `regular expression <https://docs.python.org/3.5/howto/regex.html#regex-howto>`_.
+
 
 License
 =======
